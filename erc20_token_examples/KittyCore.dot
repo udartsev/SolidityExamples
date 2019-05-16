@@ -1,0 +1,133 @@
+strict digraph {
+  Ownable
+  transferOwnership
+  totalSupply [color=yellow]
+  balanceOf [color=yellow]
+  ownerOf [color=yellow]
+  approve
+  transfer
+  transferFrom
+  supportsInterface [color=yellow]
+  isGeneScience [color=green]
+  mixGenes
+  setCEO
+  setCFO
+  setCOO
+  pause
+  unpause
+  _transfer [color=gray]
+  Transfer
+  _createKitty [color=gray]
+  Birth
+  setSecondsPerBlock
+  getMetadata [color=yellow]
+  setMetadataAddress
+  _owns [color=gray]
+  _approvedFor [color=gray]
+  _approve [color=gray]
+  Approval
+  tokensOfOwner [color=yellow]
+  _memcpy [color=yellow]
+  _toString [color=yellow]
+  tokenMetadata [color=yellow]
+  setGeneScienceAddress
+  _isReadyToBreed [color=gray]
+  _isSiringPermitted [color=gray]
+  _triggerCooldown [color=gray]
+  approveSiring
+  setAutoBirthFee
+  _isReadyToGiveBirth [color=yellow]
+  isReadyToBreed [color=yellow]
+  isPregnant [color=yellow]
+  _isValidMatingPair [color=yellow]
+  _canBreedWithViaAuction [color=gray]
+  canBreedWith [color=yellow]
+  _breedWith [color=gray]
+  Pregnant
+  breedWithAuto [color=brown]
+  giveBirth [color=red]
+  UNTRUSTED [shape=rectangle]
+  _escrow [color=gray]
+  _addAuction [color=gray]
+  AuctionCreated
+  _cancelAuction [color=gray]
+  _removeAuction [color=gray]
+  AuctionCancelled
+  _bid [color=gray]
+  AuctionSuccessful
+  _isOnAuction [color=gray]
+  _currentPrice [color=gray]
+  _computeCurrentPrice [color=gray]
+  _computeCut [color=gray]
+  Pause
+  Unpause
+  ClockAuction
+  withdrawBalance
+  createAuction
+  bid [color=brown]
+  cancelAuction
+  cancelAuctionWhenPaused
+  getAuction [color=yellow]
+  getCurrentPrice [color=yellow]
+  SiringClockAuction
+  SaleClockAuction
+  averageGen0SalePrice [color=yellow]
+  setSaleAuctionAddress
+  setSiringAuctionAddress
+  createSaleAuction
+  createSiringAuction
+  bidOnSiringAuction [color=brown]
+  undefined
+  withdrawAuctionBalances
+  createPromoKitty
+  createGen0Auction
+  _computeNextGen0Price [color=gray]
+  KittyCore
+  setNewAddress
+  ContractUpgrade
+  fallback [color=brown]
+  getKitty [color=yellow]
+  _transfer -> Transfer
+  _createKitty -> Birth
+  _createKitty -> _transfer
+  transfer -> _transfer
+  approve -> _approve
+  approve -> Approval
+  transferFrom -> _transfer
+  _toString -> _memcpy
+  _breedWith -> _triggerCooldown
+  _breedWith -> Pregnant
+  breedWithAuto -> _breedWith
+  giveBirth -> UNTRUSTED
+  _escrow -> transferFrom
+  _transfer -> transfer
+  _addAuction -> AuctionCreated
+  _cancelAuction -> _removeAuction
+  _cancelAuction -> _transfer
+  _cancelAuction -> AuctionCancelled
+  _bid -> _removeAuction
+  _bid -> transfer
+  _bid -> AuctionSuccessful
+  pause -> Pause
+  unpause -> Unpause
+  createAuction -> _escrow
+  createAuction -> _addAuction
+  bid -> _bid
+  bid -> _transfer
+  cancelAuction -> _cancelAuction
+  cancelAuctionWhenPaused -> _cancelAuction
+  createSaleAuction -> _approve
+  createSaleAuction -> createAuction
+  createSiringAuction -> _approve
+  createSiringAuction -> createAuction
+  bidOnSiringAuction -> undefined
+  bidOnSiringAuction -> _breedWith
+  withdrawAuctionBalances -> withdrawBalance
+  createPromoKitty -> _createKitty
+  createGen0Auction -> _approve
+  createGen0Auction -> createAuction
+  KittyCore -> _createKitty
+  setNewAddress -> ContractUpgrade
+  unpause -> unpause
+}
+
